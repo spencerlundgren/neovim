@@ -26,8 +26,14 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
+  -- use('Mofiqul/vscode.nvim')
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use({
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+    requiresrequires = 'nvim-treesitter/nvim-treesitter',
+  })
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use {
@@ -50,7 +56,7 @@ return require('packer').startup(function(use)
   use('folke/which-key.nvim')
   use('lewis6991/gitsigns.nvim' )
   use('nvim-lualine/lualine.nvim')
-  use('lukas-reineke/indent-blankline.nvim')
+  use{'lukas-reineke/indent-blankline.nvim'}
   use { 'alexghergh/nvim-tmux-navigation', config = function()
 
         local nvim_tmux_nav = require('nvim-tmux-navigation')
@@ -68,6 +74,15 @@ return require('packer').startup(function(use)
 
     end
 }
+use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 
 use {
   'mfussenegger/nvim-dap',
@@ -79,15 +94,14 @@ use {
 }
 
 use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
-
-use {
-  "microsoft/vscode-js-debug",
-  opt = true,
-  run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-}
+use { "mfussenegger/nvim-dap-python", requires = {"mfussenegger/nvim-dap"} }
 
 use {
   'Joakker/lua-json5',
   run = './install.sh'
 }
+use({'folke/neodev.nvim'})
+
+
+
 end)

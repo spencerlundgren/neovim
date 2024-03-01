@@ -38,3 +38,21 @@ end, {expr = true, replace_keycodes = true})
 
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
 
+vim.keymap.set("n", "<C-w>k", ":resize +5<CR>", {})
+vim.keymap.set("i", "<C-w>k", ":resize +5<CR>", {})
+vim.keymap.set("v", "<C-w>k", ":resize +5<CR>", {})
+
+vim.keymap.set("n", "<C-w>j", ":resize -5<CR>", {})
+vim.keymap.set("i", "<C-w>j", ":resize -5<CR>", {})
+vim.keymap.set("v", "<C-w>j", ":resize -5<CR>", {})
+
+vim.keymap.set("n", "<C-w>h", ":vertical-resize -5<CR>", {})
+vim.keymap.set("i", "<C-w>h", ":vertical-resize -5<CR>", {})
+vim.keymap.set("v", "<C-w>h", ":vertical-resize -5<CR>", {})
+
+vim.keymap.set("n", "<C-w>l", ":vertical-resize +5<CR>", {})
+vim.keymap.set("i", "<C-w>l", ":vertical-resize +5<CR>", {})
+vim.keymap.set("v", "<C-w>l", ":vertical-resize +5<CR>", {})
+
+vim.keymap.set("n", "<leader><CR>", "yyp:.!sh<CR>")
+-- vim.keymap.set("n", "<leader><CR>", ":.!sh<CR>")
