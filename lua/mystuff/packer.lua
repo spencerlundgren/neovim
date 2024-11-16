@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    as = 'telescope',
     requires = {
       {'nvim-lua/plenary.nvim'},
       {
@@ -19,13 +20,37 @@ return require('packer').startup(function(use)
       },
     }
   }
+  require('telescope').setup{
+    defauls = {
+      shorten_path = true,
+      path_display = { "smart" },
+    }
+  }
+  -- use({
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = function()
+  --     vim.cmd('colorscheme rose-pine')
+  --   end
+  -- })
+  --
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
+    'catppuccin/nvim',
+    as = 'catppuccin',
     config = function()
-      vim.cmd('colorscheme rose-pine')
+      vim.cmd('colorscheme catppuccin')
     end
   })
+  -- use({
+  --   'sainnhe/edge',
+  --   as = 'edge',
+  --   config = function()
+  --     vim.cmd('colorscheme edge')
+  --   end
+  -- })
+
+  -- use({ "folke/tokyonight.nvim" })
+
   -- use('Mofiqul/vscode.nvim')
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -88,6 +113,7 @@ use {
   'mfussenegger/nvim-dap',
   requires = {
     {'rcarriga/nvim-dap-ui'},
+    {'nvim-neotest/nvim-nio'},
     {'theHamsta/nvim-dap-virtual-text'},
     {"jay-babu/mason-nvim-dap.nvim"},
   },
@@ -101,7 +127,11 @@ use {
   run = './install.sh'
 }
 use({'folke/neodev.nvim'})
+use({"ray-x/lsp_signature.nvim"})
+use({"rbong/vim-buffest"})
 
+use({"tpope/vim-dadbod"})
+use({"kristijanhusak/vim-dadbod-ui"})
 
 
 end)

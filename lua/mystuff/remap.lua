@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 
 -- vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references(), {
@@ -56,3 +55,8 @@ vim.keymap.set("v", "<C-w>l", ":vertical-resize +5<CR>", {})
 
 vim.keymap.set("n", "<leader><CR>", "yyp:.!sh<CR>")
 -- vim.keymap.set("n", "<leader><CR>", ":.!sh<CR>")
+vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>")
+vim.keymap.set("n", "<leader>nt", ":tabe %:h<CR>")
+
+vim.keymap.set("n", "<leader>sv", ":vsp<CR>")
+

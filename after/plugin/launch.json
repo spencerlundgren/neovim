@@ -1,0 +1,81 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Read Queue",
+      "program": "${workspaceFolder}/build/reads.bundle.js",
+      "args": ["-m"],
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Web Server",
+      "program": "${workspaceFolder}/build/web.bundle.js",
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Gateway Server",
+      "program": "${workspaceFolder}/build/gateway.bundle.js",
+      "outputCapture": "std"
+      }, {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Alert Server",
+        "program": "${workspaceFolder}/build/alert.bundle.js",
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Report Server",
+      "program": "${workspaceFolder}/build/report.bundle.js",
+      "args": ["-r"],
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Subscription Server",
+      "program": "${workspaceFolder}/build/subscription.bundle.js",
+      "args": ["--renew"],
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Temp",
+      "program": "${workspaceFolder}/build/temp.bundle.js",
+      "outputCapture": "std"
+    }, {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Mocha",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-r",
+        "ts-node/register",
+        "--compilers",
+        "ejs:ejsify",
+        "--timeout",
+        "10000",
+        "--colors",
+        "${workspaceFolder}/test/index.spec.ts",
+      ],
+      "env": {"TEST": "true"},
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "protocol": "inspector"
+    }, {
+      "type": "pwa-node",
+      "request": "attach",
+      "name": "Attach to Remote",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/ubuntu/ncss-cloud"
+    }]
+  }
